@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: risque-managment-service
+          uri: 'http://localhost:8085'
+          predicates:
+            - Path=/risque-managment-service/**
+        - id: commercial-service
+          uri: 'http://localhost:8086'
+          predicates:
+            - Path=/commercial-service/**
+        - id: credit-service
+          uri: 'http://localhost:8087'
+          predicates:
+            - Path=/credit-service/**
+        - id: ocr-service
+          uri: 'http://localhost:8088'
+          predicates:
+            - Path=/ocr-service/**
+
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
