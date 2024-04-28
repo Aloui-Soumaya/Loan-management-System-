@@ -26,7 +26,6 @@ public class CommercialService {
 
         return score;
     }
-
     private boolean evaluateEligibility(double income, boolean financialSituation, double requestedAmount) {
         // Add your logic here to evaluate eligibility based on income, financial situation, and requested amount
         // For example, you could use income-to-debt ratio, credit score, etc.
